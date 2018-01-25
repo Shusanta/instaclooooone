@@ -12,6 +12,7 @@ function should have type ''a list -> ''a list.
 *)
 
 fun removeDuplicates(value, []) = []
-  | removeDuplicates(value, x::xs) =
-    if value = x 
-    then removeDu
+| removeDuplicates (value, x::y) =
+  if inList(value,y) = false
+  then value::removeDuplicates(value,y)
+  else removeDuplicates(value,y);
